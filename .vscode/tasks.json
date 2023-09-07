@@ -1,0 +1,55 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "config",
+			"command": "cmake.exe",
+			"args": [
+				"-S",
+				"${workspaceFolder}",
+				"-B",
+				"${workspaceFolder}/build"
+			],
+		},
+		{
+			"type": "shell",
+			"label": "build-debug",
+			"command": "cmake.exe",
+			"args": [
+				"--build",
+				"${workspaceFolder}/build",
+				"--config",
+				"Debug"
+			],
+		},
+		{
+			"type": "shell",
+			"label": "build-release",
+			"command": "cmake.exe",
+			"args": [
+				"--build",
+				"${workspaceFolder}/build",
+				"--config",
+				"Release"
+			],
+		},
+		{
+			"label": "pre-debug",
+			"dependsOrder": "sequence",
+			"dependsOn" :[
+				"config",
+				"build-debug"
+			]
+		},
+		{
+			"label": "pre-release",
+			"dependsOrder": "sequence",
+			"dependsOn" :[
+				"config",
+				"build-release"
+			]
+		}
+
+	]
+}
