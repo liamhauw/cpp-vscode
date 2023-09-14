@@ -3,7 +3,7 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "config",
+			"label": "Win32 config",
 			"command": "cmake.exe",
 			"args": [
 				"-S",
@@ -14,7 +14,7 @@
 		},
 		{
 			"type": "shell",
-			"label": "build-debug",
+			"label": "Win32 build debug",
 			"command": "cmake.exe",
 			"args": [
 				"--build",
@@ -25,7 +25,7 @@
 		},
 		{
 			"type": "shell",
-			"label": "build-release",
+			"label": "Win32 build release",
 			"command": "cmake.exe",
 			"args": [
 				"--build",
@@ -35,19 +35,19 @@
 			],
 		},
 		{
-			"label": "pre-debug",
+			"label": "pre Win32 debug",
 			"dependsOrder": "sequence",
 			"dependsOn" :[
-				"config",
-				"build-debug"
+				"Win32 config",
+				"Win32 build debug"
 			]
 		},
 		{
-			"label": "pre-release",
+			"label": "pre Win32 release",
 			"dependsOrder": "sequence",
 			"dependsOn" :[
-				"config",
-				"build-release"
+				"Win32 config",
+				"Win32 build release"
 			]
 		}
 
